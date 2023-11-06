@@ -1,0 +1,15 @@
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/bin/Debug/net7.0/FileSystem
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/bin/Debug/net7.0/FileSystem.deps.json
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/bin/Debug/net7.0/FileSystem.runtimeconfig.json
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/bin/Debug/net7.0/FileSystem.dll
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/bin/Debug/net7.0/FileSystem.pdb
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/obj/Debug/net7.0/FileSystem.csproj.AssemblyReference.cache
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/obj/Debug/net7.0/FileSystem.GeneratedMSBuildEditorConfig.editorconfig
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/obj/Debug/net7.0/FileSystem.AssemblyInfoInputs.cache
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/obj/Debug/net7.0/FileSystem.AssemblyInfo.cs
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/obj/Debug/net7.0/FileSystem.csproj.CoreCompileInputs.cache
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/obj/Debug/net7.0/FileSystem.dll
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/obj/Debug/net7.0/refint/FileSystem.dll
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/obj/Debug/net7.0/FileSystem.pdb
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/obj/Debug/net7.0/FileSystem.genruntimeconfig.cache
+/Users/denisa/repo/FileSystem/src/FileSystem/FileSystem/obj/Debug/net7.0/ref/FileSystem.dll
