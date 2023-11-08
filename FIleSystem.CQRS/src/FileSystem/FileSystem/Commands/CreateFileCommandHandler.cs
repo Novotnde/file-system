@@ -2,9 +2,16 @@
 {
     public class CreateFileCommandHandler 
     {
-        public string Path { get; set; }
+        public string DirectoryPath { get; }
+        public string FileName { get; }
+        public string Content { get; }
 
-        public string Content { get; set; }
+        public CreateFileCommandHandler(string fileName, string content, string directoryPath)
+        {
+            FileName = fileName;
+            Content = content;
+            DirectoryPath = directoryPath;
+        }
     }
 }
 

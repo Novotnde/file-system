@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SD38yOoVtzSUSSPIjHbnobGcRQDqpfdZmEv3h3PT8JPF5ckemEaAVz7vBdLcQczUCWYz+9XX0WwAOPZTaOa1EQ==",
+  "dgSpecHash": "qy4fz6H2uErMsHHZqiFkRymUoTtSUVPrQsGSbHs1jD4J2IQsrq3ytTfNVmapMETWtVxOccN2OyEpsyLuDpgNCw==",
   "success": true,
-  "projectFilePath": "/Users/denisa/repo/FileSystem/file-system/FIleSystem.CQRS/src/FileSystem/FileSystem/FileSystem.csproj",
+  "projectFilePath": "/Users/denisa/RiderProjects/file-system/FIleSystem.CQRS/src/FileSystem/FileSystem/FileSystem.csproj",
   "expectedPackageFiles": [],
   "logs": [
     {

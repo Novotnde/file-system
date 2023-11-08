@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/denisa/repo/FileSystem/file-system/FIleSystem.CQRS/src/FileSystem/FileSystem/FileSystem.csproj": {}
+    "/Users/denisa/RiderProjects/file-system/FIleSystem.CQRS/src/FileSystem/FileSystem/FileSystem.csproj": {}
   },
   "projects": {
-    "/Users/denisa/repo/FileSystem/file-system/FIleSystem.CQRS/src/FileSystem/FileSystem/FileSystem.csproj": {
+    "/Users/denisa/RiderProjects/file-system/FIleSystem.CQRS/src/FileSystem/FileSystem/FileSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/denisa/repo/FileSystem/file-system/FIleSystem.CQRS/src/FileSystem/FileSystem/FileSystem.csproj",
+        "projectUniqueName": "/Users/denisa/RiderProjects/file-system/FIleSystem.CQRS/src/FileSystem/FileSystem/FileSystem.csproj",
         "projectName": "FileSystem",
-        "projectPath": "/Users/denisa/repo/FileSystem/file-system/FIleSystem.CQRS/src/FileSystem/FileSystem/FileSystem.csproj",
+        "projectPath": "/Users/denisa/RiderProjects/file-system/FIleSystem.CQRS/src/FileSystem/FileSystem/FileSystem.csproj",
         "packagesPath": "/Users/denisa/.nuget/packages/",
-        "outputPath": "/Users/denisa/repo/FileSystem/file-system/FIleSystem.CQRS/src/FileSystem/FileSystem/obj/",
+        "outputPath": "/Users/denisa/RiderProjects/file-system/FIleSystem.CQRS/src/FileSystem/FileSystem/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/denisa/.nuget/NuGet/NuGet.Config"
