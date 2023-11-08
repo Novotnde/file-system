@@ -1,41 +1,69 @@
-﻿using FileSystem.Commands;
-using FileSystem.Queries.Contracts;
+﻿
 
 namespace FileSystem
 {
-	public class InMemoryFileSystem
-	{
-        private Dictionary<string, string> files = new Dictionary<string, string>();
-
-        public void Handle(CreateFileCommandHandler command)
+    public class InMemoryFileSystem : IFileSystem
+    {
+        private readonly Directory _root = new Directory { Name = "root" };
+        
+        public void CreateFile(string directoryPath, string fileName, string content)
         {
-            files[command.Path] = command.Content;
-        }
-
-        // Command to write to a file
-        public void Handle(WriteToFileCommandHandler command)
-        {
-            if (files.ContainsKey(command.Path))
+            var directory = GetDirectoryByPath(directoryPath);
+            if (directory != null)
             {
-                files[command.Path] = command.Content;
+                var file = new File { Name = fileName, Content = content };
+                directory.AddItem(file); 
             }
             else
             {
-                throw new ArgumentNullException("No such file exists");
+                throw new DirectoryNotFoundException($"The directory '{directoryPath}' does not exist.");
             }
         }
 
-        public string Handle(GetFileContentQuery query)
+
+        public void CreateDirectory(string parentDirectoryPath, string directoryName)
         {
-            if (files.TryGetValue(query.Path, out var content))
+            var parentDirectory = GetDirectoryByPath(parentDirectoryPath);
+            if (parentDirectory == null)
             {
-                return content;
+                throw new DirectoryNotFoundException($"The directory '{parentDirectoryPath}' does not exist.");
             }
-            else
+
+            if (parentDirectory.Items.Any(i => i.Name.Equals(directoryName, StringComparison.OrdinalIgnoreCase)))
             {
-                throw new ArgumentNullException("No such file exists");
+                throw new InvalidOperationException($"A directory with the name '{directoryName}' already exists.");
             }
+
+            var newDirectory = new Directory { Name = directoryName };
+            parentDirectory.AddItem(newDirectory);
+        }        
+        
+        private Directory? GetDirectoryByPath(string path)
+        {
+            var currentDirectory = _root;
+            if (path == "/")
+            {
+                return _root;
+            }
+
+            var parts = path.Trim('/').Split('/');
+
+            foreach (var part in parts)
+            {
+                currentDirectory = currentDirectory.Items?
+                    .OfType<Directory>()
+                    .FirstOrDefault(d => d.Name.Equals(part, StringComparison.OrdinalIgnoreCase));
+
+                if (currentDirectory == null)
+                {
+                    return null;
+                }
+            }
+
+            return currentDirectory;
         }
+
     }
+
 }
 

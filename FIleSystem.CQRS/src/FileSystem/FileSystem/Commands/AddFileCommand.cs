@@ -1,12 +1,12 @@
 ﻿namespace FileSystem.Commands
 {
-    public class CreateFileCommandHandler 
+    public class AddFileCommand : ICommand
     {
         public string DirectoryPath { get; }
         public string FileName { get; }
         public string Content { get; }
 
-        public CreateFileCommandHandler(string fileName, string content, string directoryPath)
+        public AddFileCommand(string fileName, string content, string directoryPath)
         {
             FileName = fileName;
             Content = content;

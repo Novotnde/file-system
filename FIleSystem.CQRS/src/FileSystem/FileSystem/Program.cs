@@ -7,14 +7,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        /*var fileSystem = new InMemoryFileSystem();
+        IFileSystem fileSystem = new InMemoryFileSystem();
+        ICommandHandler<AddDirectoryCommand> createDirectoryHandler = new AddDirectoryCommandHandler(fileSystem);
 
-        fileSystem.Handle(new CreateFileCommandHandler { Path = "/myFile.txt", Content = "Hello, CQRS!" });
+        ICommandHandler<AddFileCommand> createFileHandler = new AddFileCommandHandler(fileSystem);
+        
+        var createDirectoryCommand = new AddDirectoryCommand("/", "root");
+        createDirectoryHandler.Handle(createDirectoryCommand);
+        var createFileCommand = new AddFileCommand("text.json", "hello", "/root");
+        createFileHandler.Handle(createFileCommand);
 
-        fileSystem.Handle(new WriteToFileCommandHandler { Path = "/myFile.txt", Content = " Updated content." });
-
-        string content = fileSystem.Handle(new GetFileContentQuery { Path = "/myFile.txt" });
-        Console.WriteLine(content);*/
 
     }
 }
