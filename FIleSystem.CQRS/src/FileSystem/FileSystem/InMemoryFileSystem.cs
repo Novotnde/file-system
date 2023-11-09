@@ -79,30 +79,64 @@
 
             return current;
         }
+
+        public IEnumerable<Directory> GetSubDirectories(string directoryPath)
+        {
+            var directory = GetDirectoryByPath(directoryPath);
+            if (directory == null)
+            {
+                throw new DirectoryNotFoundException($"The directory '{directoryPath}' does not exist.");
+            }
+
+            return GetSubDirectoriesRecursive(directory);
+        }
+
+        private IEnumerable<Directory> GetSubDirectoriesRecursive(Directory directory)
+        {
+            var allSubDirectories = new List<Directory>();
+            foreach (var subDir in directory.Items.OfType<Directory>())
+            {
+                allSubDirectories.Add(subDir);
+                allSubDirectories.AddRange(GetSubDirectoriesRecursive(subDir));
+            }
+            return allSubDirectories;
+        }
+
+        
         private Directory? GetDirectoryByPath(string path)
         {
-            var currentDirectory = _root;
+            // If the path is "/", return the root directory.
             if (path == "/")
             {
                 return _root;
             }
 
+            // Split the path into parts.
             var parts = path.Trim('/').Split('/');
+            var currentDirectory = _root;
 
+            // Traverse the path parts to find the target directory.
             foreach (var part in parts)
             {
-                currentDirectory = currentDirectory?.Items?
+                // Search for the directory within the current directory's items.
+                var nextDirectory = currentDirectory?.Items
                     .OfType<Directory>()
                     .FirstOrDefault(d => d.Name.Equals(part, StringComparison.OrdinalIgnoreCase));
 
-                if (currentDirectory == null)
+                // If the directory is not found, return null.
+                if (nextDirectory == null)
                 {
                     return null;
                 }
+
+                // Set the found directory as the current directory.
+                currentDirectory = nextDirectory;
             }
 
+            // Return the found directory.
             return currentDirectory;
         }
+
     }
 }
 

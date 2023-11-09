@@ -1,7 +1,6 @@
 ﻿using FileSystem.Commands;
 using FileSystem.Commands.Contracts;
 using FileSystem.Queries;
-using FileSystem.Queries.Contracts;
 
 namespace FileSystem;
 
@@ -16,14 +15,22 @@ class Program
         
         var createDirectoryCommand = new AddDirectoryCommand("/", "root");
         createDirectoryHandler.Handle(createDirectoryCommand);
-        var createFileCommand = new AddFileCommand("myFile.txt", "hello", "/root");
-        createFileHandler.Handle(createFileCommand);
 
-        IQueryHandler<GetFileContentQuery, string> contentQueryHandler = new GetFileContentQueryHandler(fileSystem);      
-        var contentQuery = new GetFileContentQuery("/root/myFile.txt");
-        string content = contentQueryHandler.Handle(contentQuery);
-        Console.WriteLine(content); 
+        createDirectoryHandler.Handle(new AddDirectoryCommand("/root", "documents"));
+        createDirectoryHandler.Handle(new AddDirectoryCommand("/root/documents", "projects"));
+        createFileHandler.Handle(new AddFileCommand("project1/txt", "Hello project1", "/root/documents/projects"));
 
+        var queryHandler = new GetSubDirectoriesQueryHandler(fileSystem);
+        var subDirectories = queryHandler.Handle(new GetSubDirectoriesQuery("/root/documents"));
+
+        foreach (var dir in subDirectories)
+        {
+            Console.WriteLine($"Directory: {dir.Name}");
+            foreach (var item in dir.Items.OfType<File>())
+            {
+                Console.WriteLine($" - File: {item.Name}");
+            }
+        }
     }
 }
 
