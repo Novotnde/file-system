@@ -12,8 +12,4 @@
     <None Remove="Queries\" />
     <None Remove="Queries\Contracts\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Queries\" />
-    <Folder Include="Queries\Contracts\" />
-  </ItemGroup>
 </Project>

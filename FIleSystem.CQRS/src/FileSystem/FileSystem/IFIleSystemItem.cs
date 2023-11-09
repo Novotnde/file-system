@@ -35,5 +35,5 @@ public class Directory : IFileSystemItem
             throw new InvalidOperationException($"An item with the name '{item.Name}' already exists in the directory '{Name}'.");
         }
         _items.Add(item);
-        ModificationDate = DateTime.UtcNow; // Update the modification date of the directory.
+        ModificationDate = DateTime.UtcNow; 
     }}

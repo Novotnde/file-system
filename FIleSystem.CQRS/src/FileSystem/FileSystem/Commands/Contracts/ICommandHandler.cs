@@ -1,4 +1,4 @@
-namespace FileSystem.Commands;
+namespace FileSystem.Commands.Contracts;
 
 public interface ICommandHandler<TCommand> where TCommand : ICommand
 {

@@ -1,3 +1,5 @@
+using FileSystem.Commands.Contracts;
+
 namespace FileSystem.Commands;
 
 public class AddDirectoryCommand : ICommand
@@ -9,6 +11,4 @@ public class AddDirectoryCommand : ICommand
         ParentDirectoryPath = parentDirectoryPath;
         DirectoryName = directoryName;
     }
-    
- 
 }

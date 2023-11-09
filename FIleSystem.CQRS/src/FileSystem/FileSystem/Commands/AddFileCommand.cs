@@ -1,4 +1,6 @@
-﻿namespace FileSystem.Commands
+﻿using FileSystem.Commands.Contracts;
+
+namespace FileSystem.Commands
 {
     public class AddFileCommand : ICommand
     {

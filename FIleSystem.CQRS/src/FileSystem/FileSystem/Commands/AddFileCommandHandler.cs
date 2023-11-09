@@ -1,3 +1,5 @@
+using FileSystem.Commands.Contracts;
+
 namespace FileSystem.Commands;
 
 public class AddFileCommandHandler : ICommandHandler<AddFileCommand>
