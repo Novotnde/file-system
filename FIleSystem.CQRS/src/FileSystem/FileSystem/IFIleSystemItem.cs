@@ -10,6 +10,7 @@ public interface IFileSystemItem
 public class File : IFileSystemItem
 {
     public string Name { get; set; }
+    
     public string Content { get; set; }
     
     public DateTime CreationDate { get; } = DateTime.UtcNow;
@@ -22,6 +23,7 @@ public class Directory : IFileSystemItem
     public string Name { get; set; }
     
     public DateTime CreationDate { get; } = DateTime.UtcNow;
+    
     public DateTime ModificationDate { get; set; } = DateTime.UtcNow;
     
     private List<IFileSystemItem> _items = new List<IFileSystemItem>();
