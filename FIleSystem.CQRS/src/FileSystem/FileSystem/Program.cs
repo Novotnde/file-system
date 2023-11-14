@@ -18,7 +18,7 @@ class Program
 
         createDirectoryHandler.Handle(new AddDirectoryCommand("/root", "documents"));
         createDirectoryHandler.Handle(new AddDirectoryCommand("/root/documents", "projects"));
-        createFileHandler.Handle(new AddFileCommand("project1/txt", "Hello project1", "/root/documents/projects"));
+        createFileHandler.Handle(new AddFileCommand("project1.txt", "Hello project1", "/root/documents/projects"));
 
         var queryHandler = new GetSubDirectoriesQueryHandler(fileSystem);
         var subDirectories = queryHandler.Handle(new GetSubDirectoriesQuery("/root/documents"));
@@ -29,8 +29,12 @@ class Program
             foreach (var item in dir.Items.OfType<File>())
             {
                 Console.WriteLine($" - File: {item.Name}");
+                
             }
         }
+        var queryContentHandler = new GetFileContentQueryHandler(fileSystem);
+        var content = queryContentHandler.Handle(new GetFileContentQuery("/root/documents/projects/project1.txt"));
+        Console.WriteLine(content);
     }
 }
 

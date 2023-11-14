@@ -11,7 +11,7 @@ public class File : IFileSystemItem
 {
     public string Name { get; set; }
     
-    public string Content { get; set; }
+    public string Content { get; init; }
     
     public DateTime CreationDate { get; } = DateTime.UtcNow;
     
