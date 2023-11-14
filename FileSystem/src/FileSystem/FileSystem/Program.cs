@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        var fileSystem = new FileSys();
+        var fileSystem = new FileSystemOperationsManagerOperationsManager();
         var directory = fileSystem.Root.AddDirectory("dir1");
         var file = directory.AddFile("file.txt", "Hello, World!");
 
@@ -16,7 +16,7 @@ class Program
             Console.WriteLine(foundFile.Content);
         }
         Console.WriteLine(fileSystem.RenameDirectory("dir1", "dir2").Name);
-        Console.WriteLine(directory.RenameFile("file.txt", "file2.txt").Name);
+        Console.WriteLine(foundFile?.Rename( "file2.txt").Name);
     }
 }
 

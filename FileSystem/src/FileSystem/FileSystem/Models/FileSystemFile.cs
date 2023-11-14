@@ -10,7 +10,7 @@ namespace FileSystem.Models
 
         public string Name { get; set; }
 
-        public DateTime CreationDate { get; private set; }
+        public DateTime CreationDate { get; }
 
         public DateTime ModificationDate { get; set; }
 

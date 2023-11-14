@@ -1,5 +1,4 @@
-﻿using System;
-namespace FileSystem.Contracts
+﻿namespace FileSystem.Contracts
 {
     // Contract for file
 	public interface IFileSystemFile : IFileSystemItem

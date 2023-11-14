@@ -1,5 +1,4 @@
-﻿
-using FileSystem.Contracts;
+﻿using FileSystem.Contracts;
 
 namespace FileSystem.Models
 {
@@ -64,28 +63,6 @@ namespace FileSystem.Models
             ModificationDate = DateTime.UtcNow;
             return this;
         }
-
-        public IFileSystemFile RenameFile(string oldName, string newName)
-        {
-            if (string.IsNullOrWhiteSpace(newName))
-            {
-                throw new ArgumentException("Name cannot be empty.", nameof(newName));
-            }
-            if (Items.TryGetValue(oldName, out IFileSystemItem item) && item is FileSystemFile file)
-            {
-                Items.Remove(oldName);
-                file.Rename(newName);
-                Items[newName] = file;
-                this.ModificationDate = DateTime.UtcNow;
-                return file;
-            }
-            else
-            {
-                throw new FileNotFoundException("File not found in directory.");
-            }
-        }
-
-
     }
 }
 

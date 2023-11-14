@@ -11,8 +11,6 @@ namespace FileSystem.Contracts
         IFileSystemDirectory AddDirectory(string name);
 
         IEnumerable<IFileSystemItem> GetAllItemsRecursive();
-
-        IFileSystemFile RenameFile(string oldName, string newName);
     }
 }
 

@@ -8,7 +8,6 @@
         DateTime CreationDate { get; }
 
         DateTime ModificationDate { get; set; }
-
     }
 }
 

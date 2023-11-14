@@ -1,12 +1,12 @@
 ﻿namespace FileSystem.Contracts
 {
     //The file system
-    public interface IFileSystem
+    public interface IFileSystemOperationsManager
     {
        IFileSystemDirectory Root { get;}
 
        IFileSystemItem? FindEntry(string path);
 
-        IFileSystemDirectory RenameDirectory(string oldName, string newName);
+       IFileSystemDirectory RenameDirectory(string oldName, string newName);
     }
 }
