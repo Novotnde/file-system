@@ -1,4 +1,5 @@
 using FileSystem.Application.Contracts;
+using FileSystem.Domain.Entities;
 using FileSystem.Infrastructure.Utilities.Contracts;
 using File = FileSystem.Domain.Entities.File;
 using Directory = FileSystem.Domain.Entities.Directory;

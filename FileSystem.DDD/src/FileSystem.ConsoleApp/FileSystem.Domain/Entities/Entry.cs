@@ -1,5 +1,7 @@
 using Path = FileSystem.Domain.ValueObjects.Path;
 
+namespace FileSystem.Domain.Entities;
+
 /// <summary>
 /// Abstract class representing a file system entry.
 /// </summary>
