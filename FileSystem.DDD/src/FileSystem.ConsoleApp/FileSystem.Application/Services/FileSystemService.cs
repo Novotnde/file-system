@@ -26,9 +26,13 @@ public class FileSystemService : IFileSystemService
         ValidateObject(subDirectories, "SubDirectories");
         ValidateInput(root, "Root");
 
-        var path = pathBuilder.AddDirectory(subDirectories).AddFile(name).Build();
+        var path = pathBuilder
+            .AddDirectory(root)
+            .AddDirectory(subDirectories)
+            .AddFile(name)
+            .Build();
+        
         var address = new Path { Address = path };
-
         var directory = new Directory(root);
         
         if (subDirectories.Length > 0)
@@ -43,20 +47,6 @@ public class FileSystemService : IFileSystemService
         var file = new File(name, content, address);
         directory.AddFile(file);
         
-    }
-    
-    /// <inheritdoc/>
-    public void AddDirectory(string root, string[] directories)
-    {
-        ValidateObject(directories, "Path");
-
-        pathBuilder.AddDirectory(directories);
-        var directoryPath = pathBuilder.Build();
-        var directory = new Directory(directoryPath);
-
-        if (directories.Length <= 0) return;
-        var parentDirectory = new Directory(root);
-        parentDirectory.AddSubDirectory(directory);
     }
     
     /// <inheritdoc/>

@@ -11,6 +11,12 @@ public class PathBuilder : IPathBuilder
     private StringBuilder path = new StringBuilder();
     
     /// <inheritdoc/>
+    public IPathBuilder AddDirectory(string dir)
+    {
+        path.Append(dir).Append('/');
+        return this;
+    }
+    /// <inheritdoc/>
     public IPathBuilder AddDirectory(string[] directories)
     {
         foreach (var directory in directories)
